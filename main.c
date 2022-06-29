@@ -2,6 +2,7 @@
 #include<limits.h>
 #include<string.h>
 #include <math.h>
+#include <stdlib.h>
  
 #define loop(first,  size, decrement) for(int i=first; i < size; i+= decrement)
 #define fori(size) for(int i=0; i < size; i+= 1)
@@ -28,6 +29,14 @@ int* int_arry_i(int size)
   return arr;
 }
 
+
+void int_arry_o(int* arr ,int size)
+{
+  
+  fori(size) int_o(arr[i]);
+  
+  return ;
+}
 
 
 
