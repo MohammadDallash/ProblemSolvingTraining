@@ -38,6 +38,42 @@ void int_arry_o(int* arr ,int size)
   return ;
 }
 
+int max(int count,...) 
+{
+    va_list list;
+    va_start(list, count);
+    
+    int max = INT_MIN;
+    
+    int current;
+    
+    fori (count) 
+    {
+        current = va_arg(list, int);
+        if (current > max) max = current; 
+    }
+    
+    va_end(list);
+    return max;
+}
+int min(int count,...) 
+{
+    va_list list;
+    va_start(list, count);
+    
+    int min = INT_MAX;
+    
+    int current;
+    
+    fori (count) 
+    {
+        current = va_arg(list, int);
+        if (current < min) min = current; 
+    }
+    
+    va_end(list);
+    return min;
+}
 
 
 void solve()
