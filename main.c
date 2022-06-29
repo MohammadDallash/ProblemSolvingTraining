@@ -20,6 +20,14 @@
 #define MIN(a,b) (((a)<(b))?(a):(b))
 #define MAX(a,b) (((a)>(b))?(a):(b))
 
+int* int_arry_i(int size)
+{
+  int* arr = (int *) malloc (size * sizeof(int));
+  fori(size) int_i(arr[i]);
+  
+  return arr;
+}
+
 
 
 
