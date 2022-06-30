@@ -38,6 +38,36 @@ void int_arry_o(int* arr ,int size)
   return ;
 }
 
+
+int**** int_arry_4D_setUP(int x, int y, int z, int w)
+{
+    int sizeP = sizeof(int *);
+    
+    int size1D = sizeof(int) * w;
+    int size2D = z*sizeP + z*size1D;
+    int size3D = y*sizeP + y*size2D;
+    int size4D = x*sizeP + x*size2D;
+    
+    
+	int**** arr = malloc(size4D);
+	
+	fori(x)
+    {
+        arr[i] = (int***) (arr + x  + i * size3D / sizeP);
+        forj(y)
+        {
+            arr[i][j] = (int**) (arr + x + y  + i * size3D / sizeP + j * size2D / sizeP);
+            fork(z)
+            {
+                arr[i][j][k] = (int*) (arr + x + y + z  + i * size3D / sizeP + j * size2D / sizeP + k * size1D / sizeP);
+            }
+        }
+    }
+    
+    
+    return arr;
+}
+
 int max(int count,...) 
 {
     va_list list;
