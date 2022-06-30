@@ -38,6 +38,37 @@ void int_arry_o(int* arr ,int size)
   return ;
 }
 
+char**** char_arry_4D_setUP(int x, int y, int z, int w)
+{
+    int sizeP = sizeof(char *);
+    
+    int size1D = sizeof(char) * w;
+    int size2D = z*sizeP + z*size1D;
+    int size3D = y*sizeP + y*size2D;
+    int size4D = x*sizeP + x*size2D;
+    
+    
+	char**** arr = malloc(size4D);
+	
+	fori(x)
+    {
+        arr[i] = (char***) (arr + x  + i * size3D / sizeP);
+        forj(y)
+        {
+            arr[i][j] = (char**) (arr + x + y  + i * size3D / sizeP + j * size2D / sizeP);
+            fork(z)
+            {
+                arr[i][j][k] = (char*) (arr + x + y + z  + i * size3D / sizeP + j * size2D / sizeP + k * size1D / sizeP);
+            }
+        }
+    }
+    
+    
+    return arr;
+}
+
+
+
 
 int**** int_arry_4D_setUP(int x, int y, int z, int w)
 {
